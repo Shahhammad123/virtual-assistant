@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh; /* Make the body take full viewport height */
+    background-color: rgb(5, 0, 0);
+    display: flex;
+    align-items: center;  /* Vertically center the items */
+    justify-content: center;  /* Horizontally center the items */
+    font-size: 50px;
+    flex-direction: column;  /* Stack items vertically */
+    gap: 50px;  /* Increased gap between body elements */
+}
+
+#logo {
+    display: flex;
+    justify-content: center;  /* Horizontally center the image */
+    align-items: center;      /* Vertically center the image */
+}
+
+#logo img {
+    width: 100%;  /* Make the image scale with the container */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+h1 {
+    color: aliceblue;
+    font-family: "Protest Guerrilla", sans-serif;
+    opacity: 0;
+    animation: fadeIn 2s forwards, glowText 1s infinite alternate;
+}
+
+#name {
+    color: rgb(199, 36, 126);
+    font-size: 120px;
+    opacity: 0;
+    animation: fadeIn 3s forwards, bounceText 1s infinite alternate;
+}
+
+#va {
+    color: rgb(136, 200, 230);
+    font-size: 120px;
+    opacity: 0;
+    animation: fadeIn 4s forwards, slideText 1.5s ease-in-out infinite;
+}
+
+#voice {
+    width: 650px;
+    display: none;
+}
+
+#btn {
+    width: 20%;
+    background: linear-gradient(to right, #c54073, rgb(128, 128, 187));  /* Corrected the missing semicolon */
+    padding: 10px;
+    display: flex;
+    align-items: center;  /* Corrected 'centre' to 'center' */
+    justify-content: center;  /* Corrected 'centre' to 'center' */
+    gap: 20px;  /* Increased gap between the image and the text */
+    font-size: 70px;
+    height: 120px;
+    border-radius: 60px;
+    color: antiquewhite;
+    box-shadow: 2px 2px 10px rgb(187, 96, 96), rgb(128, 128, 187);
+    border: none;
+    transition: all 0.5;
+    cursor: pointer;
+}
+
+#btn img {
+    width: 80px;  /* Image size for the mic icon */
+    height: 80px;  /* Image height for the mic icon */
+    margin-right: 10px;  /* Space between the image and the text */
+}
+
+#btn:hover {
+    box-shadow: 2px 2px 10px rgb(187, 96, 96), 2px 2px 20px rgb(223, 161, 27);
+    letter-spacing: 5px;
+}
+
+/* Keyframes for the animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes glowText {
+    0% {
+        text-shadow: 0 0 10px rgb(199, 36, 126), 0 0 20px rgb(199, 36, 126);
+    }
+    100% {
+        text-shadow: 0 0 20px rgb(136, 200, 230), 0 0 30px rgb(136, 200, 230);
+    }
+}
+
+@keyframes bounceText {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideText {
+    0% {
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@media screen and (max-width: 768px ) {
+    body{
+        height: 100%;
+        padding : 30px
+    }
+
+    .image-container{
+        display: flex;
+        justify-content: center;
+    }
+    .image-container img{
+       width: 100%;
+       
+    }
+    
+    #logo{
+        width: 75%;
+    }
+    h1{
+        font-size:3vh;
+        text-align: center;
+    }
+    #name{
+        font-size: 32px;
+    }
+    #va{
+        font-size: 32px;
+    }
+    #btn{
+        width: 95%;
+        font-size: 14px;
+        height: auto;
+    }
+    #btn img{
+        width: 35px;
+        height: 35px;
+    }
+    #voice{
+        width: 100px;
+    }
+}
